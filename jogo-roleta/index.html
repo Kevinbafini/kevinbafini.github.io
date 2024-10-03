@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Roleta</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body class="h-screen w-screen m-0 font-sans overflow-hidden font-bold font-sans">
+<!-- Imagem de fundo com desfoque -->
+<div class="fixed top-0 left-0 w-full h-full bg-center bg-cover" style="background-image: url('img/bg.webp'); filter: blur(3px); z-index: -1;"></div>
+
+<!-- Container principal -->
+<div class="h-full flex items-center justify-center relative">
+	<div class="bg-white bg-opacity-85 rounded-2xl shadow-lg p-5 text-center w-1/2 max-w-[800px] mx-auto relative overflow-auto" style="max-height: 90%;">
+		<!-- Cabeçalho com título e vencedor -->
+		<div class="mb-2 text-gray-800">
+			<h1 class="text-2xl mb-2">Roleta Interativa</h1>
+			<!-- Seletor de tipo de sorteio -->
+			<select id="sortType" class="mb-2 p-2 rounded border border-gray-300" onchange="updateItems()">
+				<option value="letters">Letras do Alfabeto</option>
+				<option value="numbers">Números Ímpares e Pares</option>
+				<option value="themes">Temas</option>
+			</select>
+			<p id="winner" class="text-lg font-bold text-orange-600">Nenhuma</p>
+		</div>
+		
+		<!-- Roleta -->
+		<div class="wheel flex justify-center relative mb-2">
+			<canvas id="canvas" width="500" height="500" class="w-[350px] h-[350px] rounded-full border border-8 border-white shadow-2xl"></canvas>
+			<div class="center-circle w-14 h-14 rounded-full bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center shadow-md cursor-pointer" onclick="spin()">
+				<div class="pointer w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[30px] border-r border-orange-600 absolute top-1/2 right-[-280%] transform -translate-y-1/2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<audio id="audioRoleta" src="sons/audioRoleta.mp3"></audio>
+<audio id="audioConfetti" src="sons/audioConfetti.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
