@@ -26,23 +26,34 @@ const radius = width / 2;
 // Definindo os itens
 let items = [];
 
-function updateItems() {
-  const sortType = document.getElementById("sortType").value;
+// Definir roleta de letras como principal ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+  updateItems('letters');
+});
+
+function updateItems(type) {
+  // Remove a classe ativa de todos os botões
+  const buttons = document.querySelectorAll("#sortTypeButtons button");
+  buttons.forEach(button => button.classList.remove("active-button"));
   
-  // 	roleta de letras
-  if (sortType === "letters") {
+  // Adiciona a classe ativa ao botão selecionado
+  const activeButton = [...buttons].find(button => button.textContent.includes(type.charAt(0).toUpperCase() + type.slice(1)));
+  if (activeButton) {
+    activeButton.classList.add("active-button");
+  }
+  
+  // Atualizar os itens da roleta
+  if (type === "letters") {
     items = [];
     for (let i = 0; i < 26; i++) {
       items.push(String.fromCharCode(65 + i));
     }
-    // 	roleta de numeros
-  } else if (sortType === "numbers") {
+  } else if (type === "numbers") {
     items = [];
     for (let i = 0; i <= 9; i++) {
       items.push(i.toString());
     }
-    // 	roleta de temas
-  } else if (sortType === "themes") {
+  } else if (type === "themes") {
     items = ["Cidade", "Animal", "Objeto", "Fruta", "País", "Nome", "Cor", "Comida", "Profissão", "Esporte"];
   }
   
