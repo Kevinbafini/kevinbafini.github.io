@@ -7,20 +7,22 @@
 	<title>Jogo de Estourar Balões</title>
 </head>
 <body>
-<h1>Jogo de Estourar Balões</h1>
-<div id="controls">
-	<button id="start-button-single">Jogar Sozinho</button>
-	<button id="start-button-duo">Jogar em Dois</button>
-</div>
-<div id="game-container">
-	<div id="player1-container" class="player-container">
-		<p id="score1">Jogador 1: 0</p>
+<div id="game-wrapper">
+	<h1>Jogo de Estourar Balões</h1>
+	<div id="controls">
+		<button id="start-button-single">Jogar Sozinho</button>
+		<button id="start-button-duo">Jogar em Dois</button>
 	</div>
-	<div id="player2-container" class="player-container hidden">
-		<p id="score2">Jogador 2: 0</p>
+	<div id="game-container">
+		<div id="player1-container" class="player-container">
+			<p id="score1">Jogador 1: 0</p>
+		</div>
+		<div id="player2-container" class="player-container hidden">
+			<p id="score2">Jogador 2: 0</p>
+		</div>
 	</div>
+	<p id="winner"></p>
 </div>
-<p id="winner"></p>
 <script src="script.js"></script>
 </body>
 </html>

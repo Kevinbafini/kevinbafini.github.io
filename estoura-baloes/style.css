@@ -1,34 +1,73 @@
+/* Estilo do corpo */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f8f8f8;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: url('img/bg.webp') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #ccc;
 }
 
+/* Container do jogo */
+#game-wrapper {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: hotpink;
+    text-shadow: 2px 2px 5px rgba(158, 158, 158, 0.8);
+}
+
+/* Controle de botões */
 #controls {
-    margin: 20px;
+    margin: 20px 0;
 }
 
+/* Botões */
 #start-button-single, #start-button-duo {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 25px;
     margin: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    background-color: deepskyblue; /* Laranja vibrante */
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+#start-button-single:hover, #start-button-duo:hover {
+    transform: scale(1.1);
+    background-color: deepskyblue; /* Escurecendo ao passar o mouse */
+}
+
+/* Container do jogo */
 #game-container {
     display: flex;
     width: 800px;
     height: 600px;
-    border: 2px solid #000;
-    background-color: #f0f0f0;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
     overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Container dos jogadores */
 .player-container {
     flex: 1;
     position: relative;
@@ -43,21 +82,31 @@ body {
     display: none;
 }
 
+/* Balões */
 .balloon {
     position: absolute;
-    width: 50px;
-    height: 70px;
+    width: 70px;
+    height: 100px;
     cursor: pointer;
+    transition: transform 0.2s;
 }
 
+.balloon:hover {
+    transform: scale(1.1);
+}
+
+/* Pontuação */
 #score1, #score2 {
-    margin: 20px;
-    font-size: 24px;
+    margin: 10px;
+    font-size: 1.5rem;
+    color: hotpink; /* Amarelo brilhante */
+    text-shadow: 2px 2px 4px rgba(158, 158, 158, 0.8);
 }
 
+/* Mensagem do vencedor */
 #winner {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: bold;
-    color: green;
+    color: #4caf50; /* Verde */
     margin-top: 20px;
 }
