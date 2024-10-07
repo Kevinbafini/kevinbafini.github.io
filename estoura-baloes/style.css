@@ -9,6 +9,13 @@ body {
     height: 100vh;
 }
 
+#start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+}
+
 #game-container {
     position: relative;
     width: 800px;
@@ -22,14 +29,7 @@ body {
     position: absolute;
     width: 50px;
     height: 70px;
-    background-color: red;
-    border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.balloon:hover {
-    transform: scale(1.1);
 }
 
 #score {
