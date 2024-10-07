@@ -7,20 +7,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
     font-family: 'Arial', sans-serif;
     color: #ccc;
-    overflow: hidden;
 }
 
 /* Container do jogo */
 #game-wrapper {
-    background: rgba(248, 248, 248, 0.9);
-    padding: 10px;
+    background: #f8f8f8;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    max-width: 1200px;
-    width: 80%;
+    max-width: 600px;
+    width: 100%;
     max-height: 80%;
     text-align: center;
 }
@@ -28,40 +27,40 @@ body {
 /* Título */
 h1 {
     margin-top: 0;
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: hotpink;
     text-shadow: 2px 2px 5px rgba(158, 158, 158, 0.8);
 }
 
 /* Controle de botões */
 #controls {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 /* Botões */
 #start-button-single, #start-button-duo {
     padding: 10px 20px;
-    margin: 5px;
-    font-size: 1.2rem;
+    margin: 10px;
+    font-size: 1rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
-    background-color: deepskyblue;
+    background-color: deepskyblue; /* Laranja vibrante */
     color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #start-button-single:hover, #start-button-duo:hover {
-    transform: scale(1.05);
-    background-color: dodgerblue; /* Cor um pouco mais escura ao passar o mouse */
+    transform: scale(1.1);
+    background-color: deepskyblue; /* Escurecendo ao passar o mouse */
 }
 
 /* Container do jogo */
 #game-container {
     display: flex;
-    width: 1000px;
-    height: 600px;
+    width: 500px;
+    height: 100px;
     border: 2px solid #ffffff;
     border-radius: 10px;
     overflow: hidden;
@@ -87,8 +86,8 @@ h1 {
 /* Balões */
 .balloon {
     position: absolute;
-    width: 60px;
-    height: 80px;
+    width: 70px;
+    height: 100px;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -99,17 +98,16 @@ h1 {
 
 /* Pontuação */
 #score1, #score2 {
-    margin: 5px;
-    font-size: 1.5rem;
-    color: hotpink;
+    margin: 10px;
+    font-size: 1rem;
+    color: hotpink; /* Amarelo brilhante */
     text-shadow: 2px 2px 4px rgba(158, 158, 158, 0.8);
 }
 
 /* Mensagem do vencedor */
 #winner {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #4caf50; /* Verde */
-    margin-top: 15px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
 }
