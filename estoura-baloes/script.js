@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resetGame();
     score1 = 0;
     document.getElementById('score1').textContent = `Jogador 1: ${score1}`;
-    player1Container.style.flex = '1';
+    player1Container.classList.remove('hidden');
     player2Container.classList.add('hidden');
     gameInterval1 = setInterval(() => createBalloon(player1Container, 'player1'), 1000);
   });
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     score2 = 0;
     document.getElementById('score1').textContent = `Jogador 1: ${score1}`;
     document.getElementById('score2').textContent = `Jogador 2: ${score2}`;
-    player1Container.style.flex = '1';
+    player1Container.classList.remove('hidden');
     player2Container.classList.remove('hidden');
     gameInterval1 = setInterval(() => createBalloon(player1Container, 'player1'), 1000);
     gameInterval2 = setInterval(() => createBalloon(player2Container, 'player2'), 1000);
@@ -33,11 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function createBalloon(container, playerClass) {
     const balloon = document.createElement('img');
     balloon.className = `balloon ${playerClass}`;
-    balloon.src = 'img/balão.png';
+    balloon.src = 'img/balão.png'; // Caminho da imagem do balão
+    balloon.style.position = 'absolute';
     balloon.style.left = Math.random() * (container.clientWidth - 50) + 'px';
-    balloon.style.bottom = '-70px';
-    balloon.style.width = '175px';
-    balloon.style.height = '175px';
+    balloon.style.bottom = '-100px';
+    balloon.style.width = '150px';
+    balloon.style.height = '150px';
     container.appendChild(balloon);
     
     moveBalloon(balloon, container, playerClass);
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   function moveBalloon(balloon, container, playerClass) {
-    let position = -70;
+    let position = -100;
     const speed = Math.random() * 2 + 1;
     
     function frame() {
@@ -88,17 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function declareWinner(player) {
     winnerDisplay.textContent = `${player} venceu!`;
+    winnerDisplay.classList.add('text-green-600'); // Destacar o vencedor
     clearInterval(gameInterval1);
     clearInterval(gameInterval2);
   }
   
   function resetGame() {
     winnerDisplay.textContent = '';
+    winnerDisplay.classList.remove('text-green-600');
     clearInterval(gameInterval1);
     clearInterval(gameInterval2);
-    player1Container.innerHTML = '<p id="score1">Jogador 1: 0</p>';
-    player2Container.innerHTML = '<p id="score2">Jogador 2: 0</p>';
-    player1Container.style.flex = '1';
+    player1Container.innerHTML = '<p id="score1" class="m-4 text-hotpink text-2xl text-shadow-md">Jogador 1: 0</p>';
+    player2Container.innerHTML = '<p id="score2" class="m-4 text-hotpink text-2xl text-shadow-md">Jogador 2: 0</p>';
+    player1Container.classList.add('flex');
     player2Container.classList.add('hidden');
   }
 });
