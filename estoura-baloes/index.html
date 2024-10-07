@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
 	<title>Jogo de Estourar Balões</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						hotpink: '#ff69b4',
+						deepskyblue: '#00bfff'
+					},
+					boxShadow: {
+						'custom-light': '0 0 20px rgba(0, 0, 0, 0.7)',
+						'custom-heavy': '0 4px 6px rgba(0, 0, 0, 0.3)',
+					}
+				}
+			}
+		}
+	</script>
 </head>
-<body>
-<div id="game-wrapper">
-	<h1>Jogo de Estourar Balões</h1>
-	<div id="controls">
-		<button id="start-button-single">Jogar Sozinho</button>
-		<button id="start-button-duo">Jogar em Dois</button>
+
+<body class="m-0 p-0 h-screen flex justify-center items-center font-sans text-gray-300 bg-cover bg-fixed" style="background-image: url('img/bg.webp');">
+<!-- Container do Jogo -->
+<div id="game-wrapper" class="bg-gray-100 p-10 rounded-2xl shadow-custom-light max-w-[900px] w-full max-h-[90%] text-center">
+	<!-- Título -->
+	<h1 class="mt-0 text-3xl text-hotpink text-shadow-md">Jogo de Estourar Balões</h1>
+	
+	<!-- Controle de Botões -->
+	<div id="controls" class="my-5">
+		<button id="start-button-single" class="px-6 py-3 mx-2 text-lg text-white bg-deepskyblue rounded-lg shadow-custom-heavy transition-transform transform hover:scale-110">Jogar Sozinho</button>
+		<button id="start-button-duo" class="px-6 py-3 mx-2 text-lg text-white bg-deepskyblue rounded-lg shadow-custom-heavy transition-transform transform hover:scale-110">Jogar em Dois</button>
 	</div>
-	<div id="game-container">
-		<div id="player1-container" class="player-container">
-			<p id="score1">Jogador 1: 0</p>
+	
+	<!-- Container do Jogo -->
+	<div id="game-container" class="flex w-[800px] h-[500px] border-4 border-white rounded-lg overflow-hidden mx-auto shadow-md relative bg-blue-100">
+		<div id="player1-container" class="player-container flex-1 relative border-r-2 border-black">
+			<p id="score1" class="m-4 text-hotpink text-2xl text-shadow-md">Jogador 1: 0</p>
 		</div>
-		<div id="player2-container" class="player-container hidden">
-			<p id="score2">Jogador 2: 0</p>
+		<div id="player2-container" class="player-container flex-1 relative hidden">
+			<p id="score2" class="m-4 text-hotpink text-2xl text-shadow-md">Jogador 2: 0</p>
 		</div>
 	</div>
-	<p id="winner"></p>
+	
+	<!-- Mensagem do Vencedor -->
+	<p id="winner" class="mt-5 text-3xl font-bold text-green-500">Nenhum Vencedor</p>
 </div>
+
 <script src="script.js"></script>
 </body>
+
 </html>
