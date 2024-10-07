@@ -2,27 +2,45 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #f8f8f8;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
 }
 
-#start-button {
+#controls {
+    margin: 20px;
+}
+
+#start-button-single, #start-button-duo {
     padding: 10px 20px;
     font-size: 16px;
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
 }
 
 #game-container {
-    position: relative;
+    display: flex;
     width: 800px;
     height: 600px;
     border: 2px solid #000;
     background-color: #f0f0f0;
     overflow: hidden;
+}
+
+.player-container {
+    flex: 1;
+    position: relative;
+    border-right: 1px solid #000;
+}
+
+#player2-container {
+    border-right: none;
+}
+
+.hidden {
+    display: none;
 }
 
 .balloon {
@@ -32,7 +50,14 @@ body {
     cursor: pointer;
 }
 
-#score {
-    margin-top: 20px;
+#score1, #score2 {
+    margin: 20px;
     font-size: 24px;
+}
+
+#winner {
+    font-size: 32px;
+    font-weight: bold;
+    color: green;
+    margin-top: 20px;
 }
