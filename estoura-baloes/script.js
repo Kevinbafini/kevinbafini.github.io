@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function createBalloon(container, playerClass) {
     const balloon = document.createElement('img');
     balloon.className = `balloon ${playerClass}`;
-    balloon.src = 'img/balão.png'; // Caminho da imagem do balão
+    balloon.src = 'img/balão.png';
     balloon.style.left = Math.random() * (container.clientWidth - 50) + 'px';
     balloon.style.bottom = '-70px';
     balloon.style.width = '175px';
