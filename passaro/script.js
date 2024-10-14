@@ -107,7 +107,7 @@ function play() {
     requestAnimationFrame(apply_gravity);
     
     let pipe_separation = 0;
-    let pipe_gap = 35;
+    let pipe_gap = 50;
     
     function create_pipe() {
         if (game_state != 'Play') return;

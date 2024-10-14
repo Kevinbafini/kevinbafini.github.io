@@ -8,14 +8,14 @@
 	height: 100vh;
 	width: 100vw;
 	background: url('images/background-img.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 .bird {
-	height: 50px;
-	width: 70px;
+	height: 35px; /* Tamanho reduzido */
+	width: 50px;  /* Tamanho reduzido */
 	position: fixed;
 	top: 40vh;
 	left: 30vw;
@@ -26,8 +26,8 @@
 	top: 40vh;
 	left: 100vw;
 	height: 70vh;
-	width: 6vw;
-	background:radial-gradient(lightgreen 50%, green);
+	width: 6vw; /* Largura reduzida */
+	background: radial-gradient(lightgreen 50%, green);
 	border: 5px solid black;
 }
 .message {
@@ -40,7 +40,7 @@
 	transform: translate(-50%, -50%);
 	text-align: center;
 }
-.messageStyle{
+.messageStyle {
 	background: white;
 	padding: 30px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -54,7 +54,7 @@
 	font-weight: 100;
 	color: white;
 	-webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+	-webkit-text-stroke-color: black;
 	top: 0;
 	left: 0;
 	margin: 10px;
@@ -65,19 +65,19 @@
 	font-weight: bold;
 }
 @media only screen and (max-width: 1080px) {
-    .message{
+	.message {
 		font-size: 50px;
 		top: 50%;
 		white-space: nowrap;
 	}
-	.score{
+	.score {
 		font-size: 8vh;
 	}
-	.bird{
-		width: 120px;
-		height: 90px;
+	.bird {
+		width: 90px;  /* Tamanho reduzido */
+		height: 60px; /* Tamanho reduzido */
 	}
-	.pipe_sprite{
-		width: 14vw;
+	.pipe_sprite {
+		width: 10vw;  /* Largura reduzida */
 	}
 }
