@@ -12,29 +12,49 @@
 <div class="fixed top-0 left-0 w-full h-full bg-center bg-cover" style="background-image: url('img/bg.webp'); filter: blur(3px); z-index: -1;"></div>
 
 <!-- Container principal -->
-<div class="h-full flex items-center justify-center relative">
-	<div class="bg-white bg-opacity-85 rounded-2xl shadow-lg p-5 text-center w-1/2 max-w-[800px] mx-auto relative overflow-auto" style="max-height: 90%;">
-		<!-- Cabeçalho com título e vencedor -->
-		<div class="mb-2 text-gray-800">
-			<h1 class="text-2xl mb-2">Roleta Interativa</h1>
-			<!-- Seletor de tipo de sorteio -->
-			<div id="sortTypeButtons" class="flex justify-center items-center mb-4">
-				<button class="p-3 rounded border border-gray-300 mr-4 transition-all transform hover:scale-110" onclick="updateItems('letters')">Letras do Alfabeto</button>
-				<button class="p-3 rounded border border-gray-300 mr-4 transition-all transform hover:scale-110" onclick="updateItems('numbers')">Números Ímpares e Pares</button>
-				<button class="p-3 rounded border border-gray-300 transition-all transform hover:scale-110" onclick="updateItems('themes')">Temas</button>
-			</div>
-			<p id="winner" class="text-4xl font-bold text-orange-600">Nenhuma</p>
-		</div>
-		
-		<!-- Roleta -->
-		<div class="wheel flex justify-center relative mb-2">
-			<canvas id="canvas" width="500" height="500" class="w-[350px] h-[350px] rounded-full border border-8 border-white shadow-2xl"></canvas>
-			<div class="center-circle w-14 h-14 rounded-full bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center shadow-md cursor-pointer" onclick="spin()">
-				<div class="pointer w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[30px] border-r border-orange-600 absolute top-1/2 right-[-280%] transform -translate-y-1/2"></div>
-			</div>
-		</div>
-	</div>
-</div>
+
+	<!-- Conteúdo interno da roleta -->
+	<div class="flex space-x-10 p-10 rounded-l-full bg-white/70 backdrop-blur-sm w-full" >
+		<div class="h-full flex items-center justify-center box-border overflow-auto" >
+			<div class="wheel flex justify-center  mb-2 overflow-x-auto relative" >
+				<canvas id="canvas" width="400" height="400"
+				        class="rounded-full border border-8 border-white" ></canvas >
+				<div
+					class="center-circle w-14 h-14 rounded-full bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center shadow-md cursor-pointer" >
+				</div >
+				<div
+					class="pointer w-0 h-0 border-t-[1rem] border-t-transparent border-b-[1rem] border-b-transparent border-r-[2.2rem] border-rosee-500 absolute top-1/2 right-0 transform -translate-y-1/2" ></div >
+			</div >
+		</div >
+		<div class="text-gray-800 flex-grow flex flex-col items-center justify-center" >
+			<div class="flex flex-col h-2/6" >
+				<h1 class="text-5xl h-1/6 mb-6 flex items-center justify-center font-bold text-primary-500" >
+					Roleta Interativa
+				</h1 >
+				<div class="inline-flex rounded-md shadow-sm text-slate-700" role="group" >
+					<button type="button" data-type="letters"
+					        class="rand-option inline-flex items-center px-4 py-2 text-xl font-medium bg-white border border-gray-200 rounded-s-lg" >
+						<i class="fa fa-font me-2" ></i >
+						Letras
+					</button >
+					<button type="button" data-type="numbers"
+					        class="rand-option inline-flex items-center px-4 py-2 text-xl font-medium bg-white border-t border-b border-gray-200" >
+						<i class="fa fa-9 me-2" ></i >
+						Números
+					</button >
+					<button type="button" data-type="themes"
+					        class="rand-option inline-flex items-center px-4 py-2 text-xl font-medium bg-white border border-gray-200 rounded-e-lg" >
+						<i class="fa-solid fa-swatchbook me-2" ></i >
+						Temas
+					</button >
+				</div >
+			
+			
+			
+			<p id="winner" class="text-9xl flex items-center justify-center h-4/6 font-bold text-rosee-500" >Z</p >
+		</div >
+	</div >
+</div >
 
 <audio id="audioRoleta" src="sons/audioRoleta.mp3"></audio>
 <audio id="audioConfetti" src="sons/audioConfetti.mp3"></audio>
