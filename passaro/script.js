@@ -6,8 +6,6 @@ let sound_die = new Audio('sounds effect/die.mp3');
 
 // getting bird element properties
 let bird_props = bird.getBoundingClientRect();
-
-// This method returns DOMRect -> top, right, bottom, left, x, y, width and height
 let background = document.querySelector('.background').getBoundingClientRect();
 
 let score_val = document.querySelector('.score_val');
@@ -18,8 +16,16 @@ let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
 
-// Substituir o evento keydown por click para iniciar o jogo
+// Substituir o evento keydown por um click ou toque para iniciar o jogo
 document.addEventListener('click', (e) => {
+    startGame();
+});
+
+document.addEventListener('touchstart', (e) => {
+    startGame();
+});
+
+function startGame() {
     if (game_state != 'Play') {
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
@@ -33,7 +39,7 @@ document.addEventListener('click', (e) => {
         message.classList.remove('messageStyle');
         play();
     }
-});
+}
 
 function play() {
     function move() {
@@ -77,7 +83,7 @@ function play() {
         if (game_state != 'Play') return;
         bird_dy = bird_dy + gravity;
         
-        // Substituir eventos de tecla por toque
+        // Usar toque para simular o controle do pássaro
         document.addEventListener('touchstart', () => {
             img.src = 'images/Bird-2.png';
             bird_dy = -7.6;
