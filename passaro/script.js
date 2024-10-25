@@ -10,35 +10,47 @@ let background = document.querySelector('.background').getBoundingClientRect();
 
 let score_val = document.querySelector('.score_val');
 let message = document.querySelector('.message');
+let countdown = document.getElementById('countdown');
 let score_title = document.querySelector('.score_title');
 
 let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
 
-// Substituir o evento keydown por um click ou toque para iniciar o jogo
-document.addEventListener('click', (e) => {
-    startGame();
-});
+// Substituir o evento de clique para iniciar a contagem regressiva
+document.addEventListener('click', startCountdown);
+document.addEventListener('touchstart', startCountdown);
 
-document.addEventListener('touchstart', (e) => {
-    startGame();
-});
+function startCountdown() {
+    if (game_state == 'Start') {
+        game_state = 'Counting';  // Evitar que múltiplos cliques comecem várias contagens
+        let counter = 3;
+        
+        // Contagem regressiva
+        let countdownInterval = setInterval(() => {
+            countdown.innerHTML = counter;
+            counter--;
+            
+            if (counter < 0) {
+                clearInterval(countdownInterval);
+                message.innerHTML = '';  // Remove a mensagem da contagem regressiva
+                startGame();
+            }
+        }, 1000);
+    }
+}
 
 function startGame() {
-    if (game_state != 'Play') {
-        document.querySelectorAll('.pipe_sprite').forEach((e) => {
-            e.remove();
-        });
-        img.style.display = 'block';
-        bird.style.top = '40vh';
-        game_state = 'Play';
-        message.innerHTML = '';
-        score_title.innerHTML = 'Pontuação : ';
-        score_val.innerHTML = '0';
-        message.classList.remove('messageStyle');
-        play();
-    }
+    document.querySelectorAll('.pipe_sprite').forEach((e) => {
+        e.remove();
+    });
+    img.style.display = 'block';
+    bird.style.top = '40vh';
+    game_state = 'Play';
+    score_title.innerHTML = 'Pontuação : ';
+    score_val.innerHTML = '0';
+    message.classList.remove('messageStyle');
+    play();
 }
 
 function play() {
