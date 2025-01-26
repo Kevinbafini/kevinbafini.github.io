@@ -32,7 +32,7 @@ body {
 }
 
 .hover:hover {
-    transform: rotate(-15deg) translateY(-125px);
+    transform: rotate(-15deg) translateY(-115px);
     z-index: 1;
 }
 
