@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Presente Animado</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+</head>
+<body>
+<span class="texto">Clique no topo do presente para abrir-lo</span>
+<div class="presente" id="presente">
+	<div class="hover">
+		<div class="lacos">
+			<div class="volta esq"></div>
+			<div class="volta dir"></div>
+		</div>
+		<div class="topo" id="topo-presente">
+			<div class="fita"></div>
+		</div>
+	</div>
+	<div class="caixa">
+		<div id="conteudo-caixa" class="conteudo-caixa">
+			<p id="texto-presente" class="texto-presente">
+				Feliz Aniversário Amor da Minha Vida, Eu Te Amo Muito minha Princesinha encantada ❤
+			</p>
+		</div>
+		<div class="fita"></div>
+	</div>
+</div>
+
+<audio id="som-presente" src="som.mp3"></audio>
+<script src="script.js"></script>
+</body>
+</html>
